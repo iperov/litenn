@@ -46,14 +46,15 @@ nn.Tensor(shape, init=None)
 # no trainable specifier
 # no requires_grad specifier
 ```
+---
 ```python
 t = nn.Tensor ( (2,)  )
 # get data of Tensor as numpy array
 t.np() # [0. 0.]
 ```
-
+---
 >```python
-># Initialize the Tensor
+>Initialize the Tensor
 >```
 
 ```python

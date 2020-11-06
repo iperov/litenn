@@ -79,16 +79,21 @@ numpy only
 pip install litenn
 ```
 
+##
 ```python
 import litenn as nn
 
 nn.test.all()
 ```
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/iperov/litenn/blob/master/doc_github/ipynb/litenn_test_all.ipynb)
+
 
 </td></tr>
 
 <tr><td colspan=2 align="center">
+
+# [User guide](doc_github/user_guide/user_guide.md)
 
 <a href="doc_github/user_guide/user_guide.md">
 

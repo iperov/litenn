@@ -75,14 +75,10 @@ numpy only
 
 <td colspan=2 align="left">
 
-```
-pip install litenn
-```
-
-##
 ```python
-import litenn as nn
+pip install litenn
 
+import litenn as nn
 nn.test.all()
 ```
 
@@ -95,17 +91,7 @@ nn.test.all()
 
 # [User guide](doc_github/user_guide/user_guide.md)
 
-<a href="doc_github/user_guide/user_guide.md">
-
-# User guide
-
-</a>
-
-<a href="doc_github/dev_guide/dev_guide.md">
-
-# Developer guide
-
-</a>
+# [Developer guide](doc_github/dev_guide/dev_guide.md)
 
 </td></tr>
 

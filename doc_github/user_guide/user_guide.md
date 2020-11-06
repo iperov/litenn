@@ -54,6 +54,7 @@ t.np() # [0. 0.]
 ```python
 # Initialize the Tensor
 ```
+##
 ```python
 # using initializer in nn.initializer.* namespace
 t = nn.Tensor ( (2,3), init=nn.initializer.RandomUniform(-1.0, 1.0) )

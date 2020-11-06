@@ -108,15 +108,8 @@ result_t.backward(grad_for_non_trainables=True)
 print(result_t.np()) # [-6. 0. 10.]
 print(input_t.get_grad().np()) # [2. 2. 2.]
 ```
+---
 
-```python
-```
-```python
-```
-```python
-```
-```python
-```
 </td></tr>
 
 </table>

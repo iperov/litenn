@@ -52,15 +52,9 @@ t = nn.Tensor ( (2,)  )
 t.np() # [0. 0.]
 ```
 
-</td></tr>
-<tr><td colspan=2 align="left">
-
-```python
-# Initialize the Tensor
-```
-
-</td></tr>
-<tr><td colspan=2 align="left">
+>```python
+># Initialize the Tensor
+>```
 
 ```python
 # using initializer in nn.initializer.* namespace

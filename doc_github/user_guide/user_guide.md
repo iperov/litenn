@@ -51,10 +51,17 @@ t = nn.Tensor ( (2,)  )
 # get data of Tensor as numpy array
 t.np() # [0. 0.]
 ```
+
+</td></tr>
+<tr><td colspan=2 align="left">
+
 ```python
 # Initialize the Tensor
 ```
-##
+
+</td></tr>
+<tr><td colspan=2 align="left">
+
 ```python
 # using initializer in nn.initializer.* namespace
 t = nn.Tensor ( (2,3), init=nn.initializer.RandomUniform(-1.0, 1.0) )

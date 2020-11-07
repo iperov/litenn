@@ -263,6 +263,30 @@ def sub(a_t, b_t):
     """
     return sub_op(a_t, b_t)
      
+class max_kernel(DualWiseOpKernel):
+    def get_forward_kernel_text(self):  return f"O = fmax(A,B);"
+    def get_backward_A_kernel_text(self): return f"dA = dO * (A >= B);"
+    def get_backward_B_kernel_text(self): return f"dB = dO * (A < B);"
+    def get_op_name(self): return f"max"
+def max_op(a_t, b_t, output_t=None, is_add_to_output=False): return dual_wise_op(max_kernel, (), a_t, b_t, output_t=output_t, is_add_to_output=is_add_to_output)
+def max(a_t, b_t):
+    """
+    max operator
+    """
+    return max_op(a_t, b_t)
+
+class min_kernel(DualWiseOpKernel):
+    def get_forward_kernel_text(self):  return f"O = fmin(A,B);"
+    def get_backward_A_kernel_text(self): return f"dA = dO * (A <= B);"
+    def get_backward_B_kernel_text(self): return f"dB = dO * (A > B);"
+    def get_op_name(self): return f"min"
+def min_op(a_t, b_t, output_t=None, is_add_to_output=False): return dual_wise_op(min_kernel, (), a_t, b_t, output_t=output_t, is_add_to_output=is_add_to_output)
+def min(a_t, b_t):
+    """
+    min operator 
+    """
+    return min_op(a_t, b_t)
+     
 class mul_kernel(DualWiseOpKernel):
     def get_forward_kernel_text(self):  return f"O = A * B;"
     def get_backward_A_kernel_text(self): return f"dA = dO*B;"
@@ -288,7 +312,7 @@ def div(a_t, b_t):
     return div_op(a_t, b_t)
     
 def dual_wise_op_test():
-    for op in [add, binary_crossentropy, categorical_crossentropy, sub, mul, div]:
+    for op in [add, binary_crossentropy, categorical_crossentropy, sub, max, min, mul, div]:
         print(f'{op.__name__}()')
         for _ in range(10):    
             if op == categorical_crossentropy:

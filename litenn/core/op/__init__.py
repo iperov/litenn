@@ -31,6 +31,8 @@ from .dual_wise_op import (DualWiseOpKernel,
                          binary_crossentropy_op as binary_crossentropy,
                          categorical_crossentropy,
                          sub_op as sub,
+                         max_op as max,
+                         min_op as min,
                          mul_op as mul,
                          div_op as div
                         )

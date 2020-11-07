@@ -36,6 +36,8 @@ from litenn.core.op.dual_wise_op import (add,
                                         binary_crossentropy,
                                         categorical_crossentropy,
                                         sub,
+                                        max,
+                                        min,
                                         mul,
                                         div)
 from litenn.core.op.element_wise_op import (abs,

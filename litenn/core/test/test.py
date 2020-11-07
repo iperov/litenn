@@ -25,6 +25,7 @@ from litenn.core.op.tile import tile_test
 from litenn.core.op.transpose import transpose_test
 
 from litenn.core.module.BatchNorm2D import BatchNorm2D_test
+from litenn.core.module.BlurPool import BlurPool_test
 from litenn.core.module.Conv2D import Conv2D_test
 from litenn.core.module.Conv2DTranspose import Conv2DTranspose_test
 from litenn.core.module.Dense import Dense_test
@@ -265,7 +266,6 @@ def test_all(iterations=1):
     nn.devices.set_current(nn.devices.ask_to_choose(choose_only_one=True))
 
     test_funcs = [
-        
         dropout_test,
         element_wise_op_test,
         dual_wise_op_test,
@@ -296,6 +296,7 @@ def test_all(iterations=1):
         
         Module_test,
         BatchNorm2D_test,
+        BlurPool_test,
         Conv2D_test,
         Conv2DTranspose_test,
         Dense_test,

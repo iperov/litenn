@@ -73,7 +73,7 @@ numpy only
 
 <tr>
 
-<td colspan=2 align="left">
+<td colspan=2 align="center">
 
 ```python
 pip install litenn

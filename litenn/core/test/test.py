@@ -31,6 +31,7 @@ from litenn.core.module.Conv2DTranspose import Conv2DTranspose_test
 from litenn.core.module.Dense import Dense_test
 from litenn.core.module.DenseAffine import DenseAffine_test
 from litenn.core.module.Dropout import Dropout_test
+from litenn.core.module.FRNorm2D import FRNorm2D_test
 from litenn.core.module.InstanceNorm2D import InstanceNorm2D_test
 from litenn.core.module.SeparableConv2D import SeparableConv2D_test
 
@@ -302,6 +303,7 @@ def test_all(iterations=1):
         Dense_test,
         DenseAffine_test,
         Dropout_test,
+        FRNorm2D_test,
         InstanceNorm2D_test,
         SeparableConv2D_test,
 

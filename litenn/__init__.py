@@ -101,6 +101,7 @@ from litenn.core.module.Dropout import Dropout
 from litenn.core.module.FRNorm2D import FRNorm2D
 from litenn.core.module.InstanceNorm2D import InstanceNorm2D
 from litenn.core.module.SeparableConv2D import SeparableConv2D
+from litenn.core.module.TLU import TLU
 
 import litenn.core.hint as hint
 

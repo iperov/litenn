@@ -5,6 +5,8 @@ class FRNorm2D(nn.Module):
     """
     Filter Response Normalization.
     
+    should be used with nn.TLU() activator
+    
     arguments
     
         in_ch       input channels

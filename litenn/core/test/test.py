@@ -34,6 +34,7 @@ from litenn.core.module.Dropout import Dropout_test
 from litenn.core.module.FRNorm2D import FRNorm2D_test
 from litenn.core.module.InstanceNorm2D import InstanceNorm2D_test
 from litenn.core.module.SeparableConv2D import SeparableConv2D_test
+from litenn.core.module.TLU import TLU_test
 
 def Module_test():
     filepath = Path(tempfile.gettempdir()) / '123456789.bin'
@@ -144,7 +145,7 @@ def shallow_mode_test():
     class Module1(nn.Module):
         def __init__(self, include_self=True):
             self.conv = nn.Conv2D(1,1, 3, stride=2)
-            
+
         def forward(self, x):
             x = self.conv(x)
             return x
@@ -283,18 +284,18 @@ def test_all(iterations=1):
         pool2d_test,
         resize2D_bilinear_test,
         resize2D_nearest_test,
-        
+
         ssim_test,
         dssim_test,
-        
+
         backward_test,
         MultiGPU_test,
         Initializers_test,
-        
+
         Adam_test,
         RMSprop_test,
         SGD_test,
-        
+
         Module_test,
         BatchNorm2D_test,
         BlurPool_test,
@@ -306,6 +307,7 @@ def test_all(iterations=1):
         FRNorm2D_test,
         InstanceNorm2D_test,
         SeparableConv2D_test,
+        TLU_test,
 
         shallow_mode_test,
         ]

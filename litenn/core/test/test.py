@@ -236,6 +236,13 @@ def Initializers_test():
     nn.Tensor( (128,), init=nn.initializer.RandomNormal() ).np()
     nn.Tensor( (128,), init=nn.initializer.RandomUniform() ).np()
 
+def AdaBelief_test():
+    weight_t = nn.Tensor( (16,), init=nn.initializer.Scalar(0.0) )
+    weight_t.get_grad().fill(1.0)
+
+    opt = nn.optimizer.AdaBelief([weight_t], lr_decay=0.1, lr_dropout=0.7, clipnorm=0.1)
+    opt.step()
+    
 def Adam_test():
     weight_t = nn.Tensor( (16,), init=nn.initializer.Scalar(0.0) )
     weight_t.get_grad().fill(1.0)
@@ -292,6 +299,7 @@ def test_all(iterations=1):
         MultiGPU_test,
         Initializers_test,
 
+        AdaBelief_test,
         Adam_test,
         RMSprop_test,
         SGD_test,

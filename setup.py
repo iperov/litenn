@@ -17,14 +17,14 @@ def scan_packages(path, prefix=None):
 
 setuptools.setup(
     name="litenn",
-    version="2020.11.9",
+    version="2020.11.89",
     author="iperov",
     author_email="lepersorium@gmail.com",
     description="Lightweight machine learning library based on OpenCL 1.2",
     install_requires=['numpy'],
     long_description="",
     url="https://github.com/iperov/litenn",
-    packages=[*scan_packages('.')],
+    packages=['.', *scan_packages('.')],
     license = 'MIT',
     classifiers=[
         "License :: OSI Approved :: MIT License",

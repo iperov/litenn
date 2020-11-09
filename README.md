@@ -93,6 +93,8 @@ nn.test.all()
 
 # [Developer guide](doc_github/dev_guide/dev_guide.md)
 
+# [ LiteNN-apps](https://github.com/iperov/litenn-apps)
+
 </td></tr>
 
 <tr><td colspan=2 align="center">

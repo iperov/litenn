@@ -517,10 +517,14 @@ def Tensor_sliced_from_value(value):
     """
     Produces new Tensor from np.ndarray value 
     sliced along first dimension to every current device
-
+    
     arguments
 
      value      np.ndarray
+     
+    errors:
+    
+     ValueError
     """
     if not isinstance(value, (Tensor, np.ndarray) ):
         raise ValueError(f'Value must be np.ndarray type')

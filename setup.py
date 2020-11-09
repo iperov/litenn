@@ -17,7 +17,7 @@ def scan_packages(path, prefix=None):
 
 setuptools.setup(
     name="litenn",
-    version="0.1.0",
+    version="2020.11.9",
     author="iperov",
     author_email="lepersorium@gmail.com",
     description="Lightweight machine learning library based on OpenCL 1.2",
@@ -33,5 +33,5 @@ setuptools.setup(
         "Environment :: GPU",
         "Topic :: Scientific/Engineering",
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.6',
 )

@@ -17,7 +17,7 @@ def scan_packages(path, prefix=None):
 
 setuptools.setup(
     name="litenn",
-    version="2020.11.91",
+    version="2020.11.100",
     author="iperov",
     author_email="lepersorium@gmail.com",
     description="Lightweight machine learning library based on OpenCL 1.2",

@@ -7,7 +7,7 @@ class InstanceNorm2D(nn.Module):
     """
     Instance Normalization 2D module.
 
-        Parameters
+    arguments
 
         in_ch       int             input channels
 

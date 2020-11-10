@@ -38,8 +38,9 @@ class Conv2D(nn.Module):
             kernel_initializer = nc.Cacheton.get_var('Conv2D_default_kernel_initializer')
         if kernel_initializer is None:
             kernel_initializer = nn.initializer.GlorotUniform()
-        if kernel_initializer.has_fan_in_out():
+        if kernel_initializer.has_fan_in():
             if kernel_initializer.fan_in is None: kernel_initializer.fan_in  = in_ch  * kernel_size * kernel_size
+        if kernel_initializer.has_fan_out():
             if kernel_initializer.fan_out is None: kernel_initializer.fan_out = out_ch * kernel_size * kernel_size
 
         self.kernel_initializer = kernel_initializer

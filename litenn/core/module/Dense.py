@@ -25,8 +25,9 @@ class Dense(nn.Module):
             weight_initializer = nc.Cacheton.get_var('Dense_default_weight_initializer')
         if weight_initializer is None:
             weight_initializer = nn.initializer.GlorotUniform()            
-        if weight_initializer.has_fan_in_out():
+        if weight_initializer.has_fan_in():
             if weight_initializer.fan_in is None: weight_initializer.fan_in = in_ch
+        if weight_initializer.has_fan_out():
             if weight_initializer.fan_out is None: weight_initializer.fan_out = out_ch
 
         self.weight = nn.Tensor( (in_ch, out_ch), init=weight_initializer )

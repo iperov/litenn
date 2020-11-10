@@ -43,8 +43,9 @@ class SeparableConv2D(nn.Module):
             depthwise_initializer = nc.Cacheton.get_var('SeparableConv2D_default_depthwise_initializer')
         if depthwise_initializer is None:
             depthwise_initializer = nn.initializer.GlorotUniform()
-        if depthwise_initializer.has_fan_in_out():
+        if depthwise_initializer.has_fan_in():
             if depthwise_initializer.fan_in is None: depthwise_initializer.fan_in  = in_ch  * kernel_size * kernel_size
+        if depthwise_initializer.has_fan_out():
             if depthwise_initializer.fan_out is None: depthwise_initializer.fan_out = 0
 
         self.depthwise_initializer = depthwise_initializer
@@ -55,8 +56,9 @@ class SeparableConv2D(nn.Module):
             pointwise_initializer = nc.Cacheton.get_var('SeparableConv2D_default_pointwise_initializer')
         if pointwise_initializer is None:
             pointwise_initializer = nn.initializer.GlorotUniform()
-        if pointwise_initializer.has_fan_in_out():
+        if pointwise_initializer.has_fan_in():
             if pointwise_initializer.fan_in is None: pointwise_initializer.fan_in  = in_ch
+        if pointwise_initializer.has_fan_out():
             if pointwise_initializer.fan_out is None: pointwise_initializer.fan_out = out_ch
 
         self.pointwise_initializer = pointwise_initializer

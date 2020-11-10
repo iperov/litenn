@@ -14,8 +14,9 @@ class _InitGlorot(Initializer):
         self.fan_out = fan_out
         self.initer = None
 
-    def has_fan_in_out(self): return True
-
+    def has_fan_in(self): return True
+    def has_fan_out(self): return True
+    
     def initialize_CLBuffer(self, cl_buffer, tensor_shape):
         if self.initer is None:
             if self.fan_in is None and self.fan_out is None:

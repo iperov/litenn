@@ -91,6 +91,7 @@ from litenn.core import devices
 
 # forward Modules to litenn namespace
 from litenn.core.module.Module import Module
+from litenn.core.module.AdaptiveInstanceNorm2D import AdaptiveInstanceNorm2D
 from litenn.core.module.BatchNorm2D import BatchNorm2D
 from litenn.core.module.BlurPool import BlurPool
 from litenn.core.module.Conv2D import Conv2D

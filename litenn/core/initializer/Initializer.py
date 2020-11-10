@@ -4,14 +4,24 @@ class Initializer:
     """
     Base class for inititalizers  
     """
-    
-    def has_fan_in_out(self):
+
+    def has_fan_in(self): 
         """
-        Initializer has fan_in/fan_out parameters
+        Initializer has fan_in parameter
         
-         .fan_in .fan_out 
-         if they are None, 
-         they will be set by Conv2D, Dense and other layers
+         .fan_in
+         if it is None, 
+         it will be set by Conv2D, Dense and other layers
+        """
+        return False
+        
+    def has_fan_out(self): 
+        """
+        Initializer has fan_out parameter
+        
+         .fan_out
+         if it is None, 
+         it will be set by Conv2D, Dense and other layers
         """
         return False
         

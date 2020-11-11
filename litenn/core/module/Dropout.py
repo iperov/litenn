@@ -36,6 +36,9 @@ def Dropout_test():
     y = module(x)
     y.backward(grad_for_non_trainables=True)
 
+    if not x.has_grad():
+        raise Exception('x has no grad')
+
     module.set_training(False)
     x = nn.Tensor( (2,4,4,4) )
     y = module(x)

@@ -69,3 +69,6 @@ def BlurPool_test():
     x = nn.Tensor( (2,3,64,64) )
     y = module(x)
     y.backward(grad_for_non_trainables=True)
+    
+    if not x.has_grad():
+        raise Exception('x has no grad')

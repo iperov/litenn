@@ -93,7 +93,7 @@ def dual_wise_op(DualWiseOpKernel_cls, DualWiseOpKernel_args, a_t, b_t, output_t
     is_add_to_output = False if output_t is None else is_add_to_output
 
 
-    op = nc.Cacheton.get(_Input2Op, DualWiseOpKernel_cls, DualWiseOpKernel_args, a_t.shape, b_t.shape, is_add_to_output)
+    op = nc.Cacheton.get(_DualWiseOp, DualWiseOpKernel_cls, DualWiseOpKernel_args, a_t.shape, b_t.shape, is_add_to_output)
 
     if output_t is None:
         output_t = nn.Tensor ( op.info.output_shape )
@@ -129,7 +129,7 @@ def dual_wise_op_B_gradfn(op, a_t, b_t, O_t, dO_t):
     if bred.rank != 0:
         nc.op.reduce_sum (dB_t, bred, output_t=b_t.get_grad(), is_add_to_output=True)
 
-class _Input2Op:
+class _DualWiseOp:
     def __init__(self, DualWiseOpKernel_cls, DualWiseOpKernel_args, a_shape : nc.TensorShape, b_shape : nc.TensorShape, is_add_to_output):
         self.kernel = DualWiseOpKernel_cls(*DualWiseOpKernel_args)
         self.info = info = nc.info.InfoBroadcast(a_shape, b_shape)

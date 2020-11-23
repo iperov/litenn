@@ -98,6 +98,7 @@ from litenn.core.module.Conv2D import Conv2D
 from litenn.core.module.Conv2DTranspose import Conv2DTranspose
 from litenn.core.module.Dense import Dense
 from litenn.core.module.DenseAffine import DenseAffine
+from litenn.core.module.DepthwiseConv2D import DepthwiseConv2D
 from litenn.core.module.Dropout import Dropout
 from litenn.core.module.FRNorm2D import FRNorm2D
 from litenn.core.module.InstanceNorm2D import InstanceNorm2D
